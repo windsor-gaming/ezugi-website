@@ -1,0 +1,157 @@
+.statement {
+    width: 100%;
+    padding: clamp(40px, 6vw, 56px) clamp(24px, 6vw, 80px);
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+    max-width: 1640px;
+    margin: 0 auto;
+    transition: background 0.25s ease;
+}
+
+.statement-text {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.statement-text.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.statement-text h2 {
+    font-size: clamp(1.5rem, 3.2vw, 3rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text);
+    margin: 0 0 32px;
+}
+
+.statement-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.statement-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    width: fit-content;
+    transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.statement-links a::after {
+    content: '→';
+    transition: transform 0.15s ease;
+}
+
+.statement-links a:hover {
+    color: var(--accent-hover);
+}
+
+.statement-links a:hover::after {
+    transform: translateX(4px);
+}
+
+.statement-images {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, 2vw, 20px);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+
+.statement-images.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.statement-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+}
+
+.statement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.statement-image:hover img {
+    transform: scale(1.05);
+}
+
+.statement-image-2 {
+    margin-top: 40px;
+}
+
+/* Large tablets / small laptops: still side-by-side, tighter spacing */
+@media (max-width: 1150px) {
+    .statement {
+        gap: 32px;
+    }
+
+    .statement-image-2 {
+        margin-top: 24px;
+    }
+}
+
+/* Tablets and below: stack text above images */
+@media (max-width: 860px) {
+    .statement {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .statement-images {
+        order: -1;
+    }
+
+    .statement-image-2 {
+        margin-top: 20px;
+    }
+
+    .statement-text h2 {
+        margin-bottom: 24px;
+    }
+}
+
+/* Small phones: single-column images, tighter aspect ratio so photos don't get too tall */
+@media (max-width: 480px) {
+    .statement-images {
+        grid-template-columns: 1fr;
+    }
+
+    .statement-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .statement-image-2 {
+        margin-top: 0;
+    }
+
+    .statement-links {
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .statement-text,
+    .statement-images,
+    .statement-image img {
+        transition: none;
+    }
+}

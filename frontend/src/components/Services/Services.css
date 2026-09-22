@@ -1,0 +1,318 @@
+.services-industries {
+    width: 100%;
+    padding: 96px 80px;
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.si-header {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.si-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.si-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.si-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.25;
+}
+
+.si-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+}
+
+.si-tabs.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.si-tab {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.si-tab:hover {
+    color: var(--text);
+    border-color: var(--accent);
+}
+
+.si-tab.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.si-content {
+    max-width: 1460px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
+}
+
+.si-content.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.si-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.si-service-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 32px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.si-service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.si-service-number {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.si-service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.si-service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.si-industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.si-industry-chip {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.si-industry-chip:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.si-service-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.si-service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.si-service-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.si-service-number {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.si-service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(225, 29, 46, 0.12);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.si-service-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.si-service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.si-service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+}
+
+.si-service-points {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.si-service-points li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.si-service-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.si-service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    width: fit-content;
+    transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.si-service-link::after {
+    content: '→';
+    transition: transform 0.15s ease;
+}
+
+.si-service-link:hover {
+    color: var(--accent-hover);
+}
+
+.si-service-link:hover::after {
+    transform: translateX(4px);
+}
+
+@media (max-width: 1150px) {
+    .services-industries {
+        padding: 80px 40px;
+    }
+
+    .si-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .si-industries-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .services-industries {
+        padding: 64px 24px;
+    }
+
+    .si-title {
+        font-size: 1.7rem;
+    }
+
+    .si-tabs {
+        gap: 8px;
+    }
+
+    .si-tab {
+        padding: 9px 20px;
+        font-size: 0.88rem;
+    }
+
+    .si-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .si-industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .si-header,
+    .si-tabs,
+    .si-content,
+    .si-service-card,
+    .si-industry-chip {
+        transition: none;
+    }
+}

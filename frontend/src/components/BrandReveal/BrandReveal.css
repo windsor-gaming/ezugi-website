@@ -1,0 +1,48 @@
+.brand-reveal {
+    position: relative;
+    height: 220vh;
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.brand-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brand-word {
+    margin: 0;
+    display: flex;
+    font-size: 28vw;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.brand-letter {
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.3s ease, opacity 0.3s ease,
+        -webkit-text-stroke 0.25s ease;
+    will-change: transform, opacity;
+}
+
+@media (max-width: 860px) {
+    .brand-reveal {
+        height: 80vh;
+    }
+
+    .brand-word {
+        font-size: 22vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-letter {
+        transition: none;
+    }
+}
