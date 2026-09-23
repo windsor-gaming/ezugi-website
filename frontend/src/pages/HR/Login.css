@@ -1,0 +1,90 @@
+.hr-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bg);
+}
+
+.hr-login-form {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: clamp(28px, 5vw, 40px);
+    background: var(--input-bg);
+}
+
+.hr-login-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+}
+
+.hr-login-form h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: -12px 0 4px;
+}
+
+.hr-login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hr-login-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.hr-login-field input {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.hr-login-field input:focus {
+    border-color: var(--accent);
+}
+
+.hr-login-error {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.hr-login-btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.hr-login-btn:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.hr-login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

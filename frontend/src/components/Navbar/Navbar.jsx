@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import './Navbar.css'
 
@@ -38,8 +39,8 @@ const Navbar = () => {
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Insights</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><Link to="/careers">Careers</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
         <form className="search-form" onSubmit={handleSearch} role="search">
           <svg className="search-icon" viewBox="0 0 24 24" aria-hidden="true">

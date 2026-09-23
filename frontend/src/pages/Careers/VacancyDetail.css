@@ -1,0 +1,121 @@
+.vd-page {
+    width: 100%;
+    padding: clamp(120px, 14vw, 160px) clamp(24px, 6vw, 80px) clamp(80px, 8vw, 120px);
+    background: var(--bg);
+    max-width: 1640px;
+    margin: 0 auto;
+    transition: background 0.25s ease;
+}
+
+.vd-content {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.vd-back-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.vd-back-link:hover {
+    color: var(--accent-hover);
+}
+
+.vd-area {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+
+.vd-content h1 {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+    margin: 0 0 16px;
+}
+
+.vd-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+}
+
+.vd-about {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 32px;
+}
+
+.vd-section {
+    margin-bottom: 32px;
+}
+
+.vd-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 16px;
+}
+
+.vd-section ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vd-section li {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.vd-apply-section {
+    margin-top: 8px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}
+
+.vd-apply-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 20px;
+}
+
+.vd-loading {
+    color: var(--text-muted);
+}
+
+.vd-not-found {
+    width: 100%;
+    padding: clamp(120px, 14vw, 160px) clamp(24px, 6vw, 80px) clamp(80px, 8vw, 120px);
+    max-width: 1640px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.vd-not-found h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.vd-not-found p {
+    color: var(--text-muted);
+    margin: 0 0 20px;
+}

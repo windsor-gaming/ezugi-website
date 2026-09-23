@@ -1,0 +1,132 @@
+.va-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.va-list-header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.va-new-btn {
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.15s ease;
+}
+
+.va-new-btn:hover {
+    background: var(--accent-hover);
+}
+
+.va-status-text {
+    color: var(--text-muted);
+}
+
+.va-error {
+    color: var(--accent);
+}
+
+.va-table {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.va-table-head,
+.va-table-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr 1.4fr 0.8fr 1.6fr;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 18px;
+}
+
+.va-table-head {
+    background: var(--input-bg);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.va-table-row {
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.va-title-cell {
+    font-weight: 600;
+}
+
+.va-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.va-badge.active {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.va-badge.inactive {
+    background: var(--input-bg);
+    color: var(--text-muted);
+}
+
+.va-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.va-action-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.va-action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.va-delete-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+@media (max-width: 900px) {
+    .va-table-head {
+        display: none;
+    }
+
+    .va-table-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 18px;
+    }
+}

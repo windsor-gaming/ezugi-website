@@ -1,0 +1,239 @@
+.ra-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.ra-header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.ra-new-btn,
+.ra-save-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.ra-new-btn:hover,
+.ra-save-btn:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.ra-save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.ra-cancel-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.ra-cancel-btn:hover {
+    border-color: var(--text);
+}
+
+.ra-status-text {
+    color: var(--text-muted);
+}
+
+.ra-error {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ── Form ── */
+
+.ra-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: clamp(20px, 3vw, 32px);
+    background: var(--input-bg);
+    margin-bottom: 32px;
+    max-width: 760px;
+}
+
+.ra-form h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.ra-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ra-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ra-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.ra-field input,
+.ra-field select,
+.ra-field textarea {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.ra-field input:focus,
+.ra-field select:focus,
+.ra-field textarea:focus {
+    border-color: var(--accent);
+}
+
+.ra-field textarea {
+    resize: vertical;
+}
+
+.ra-form-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* ── List ── */
+
+.ra-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.ra-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.ra-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.ra-author {
+    display: block;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.ra-author-title {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.ra-stars {
+    color: #f59e0b;
+    letter-spacing: 2px;
+}
+
+.ra-content {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    flex: 1;
+}
+
+.ra-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    flex-shrink: 0;
+}
+
+.ra-badge.published {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.ra-badge.draft {
+    background: var(--input-bg);
+    color: var(--text-muted);
+}
+
+.ra-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ra-action-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ra-action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.ra-delete-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+@media (max-width: 640px) {
+    .ra-field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ra-list {
+        grid-template-columns: 1fr;
+    }
+}

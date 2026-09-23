@@ -1,0 +1,7 @@
+# Only read by the Supabase CLI (`supabase functions deploy`), not by the
+# Dashboard's "Deploy a new function" flow. If you redeploy via the CLI
+# from this `backend/` folder, this keeps the same setting: the function
+# is called by anonymous site visitors, so it must not require a login
+# token on every request (see backend/README.md).
+[functions.send-contact-email]
+verify_jwt = false
