@@ -1,0 +1,128 @@
+.features {
+    width: 100%;
+    padding: 96px 80px;
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.features-header {
+    max-width: 640px;
+    margin: 0 auto 64px;
+    text-align: center;
+}
+
+.features-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    margin-bottom: 14px;
+}
+
+.features-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.features-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1460px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(225, 29, 46, 0.12);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 10px;
+}
+
+.feature-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 1150px) {
+    .features {
+        padding: 80px 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .features {
+        padding: 64px 24px;
+    }
+
+    .features-header {
+        margin-bottom: 48px;
+    }
+
+    .features-title {
+        font-size: 1.9rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-card {
+        transition: none;
+    }
+}

@@ -1,0 +1,244 @@
+.how-it-works {
+    width: 100%;
+    padding: 96px 80px;
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.hiw-header {
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.hiw-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hiw-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 16px;
+}
+
+.hiw-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.hiw-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hiw-line-track {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--border);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.hiw-line-fill {
+    width: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: height 0.1s linear;
+}
+
+.hiw-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 220px;
+}
+
+.hiw-step-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s ease;
+}
+
+.hiw-step.in-view .hiw-step-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hiw-step-card:hover {
+    border-color: var(--accent);
+}
+
+.hiw-step.left .hiw-step-card {
+    grid-column: 1;
+    justify-self: end;
+    margin-right: 48px;
+}
+
+.hiw-step.right .hiw-step-card {
+    grid-column: 2;
+    justify-self: start;
+    margin-left: 48px;
+}
+
+.hiw-step-tag {
+    display: inline-block;
+    background: rgba(225, 29, 46, 0.12);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.hiw-step-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 10px;
+}
+
+.hiw-step-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.hiw-step-node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    z-index: 1;
+    opacity: 0;
+    transition: transform 0.5s ease, border-color 0.4s ease, color 0.4s ease, opacity 0.5s ease,
+        background 0.25s ease;
+}
+
+.hiw-step.in-view .hiw-step-node {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg);
+}
+
+.hiw-step-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.hiw-step-duration {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.hiw-step-deliverables {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hiw-step-deliverables li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.hiw-step-deliverables li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+@media (max-width: 860px) {
+    .how-it-works {
+        padding: 72px 24px;
+    }
+
+    .hiw-header {
+        margin-bottom: 56px;
+    }
+
+    .hiw-title {
+        font-size: 1.9rem;
+    }
+
+    .hiw-line-track {
+        left: 28px;
+    }
+
+    .hiw-step {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        margin-bottom: 40px;
+        padding-left: 72px;
+    }
+
+    .hiw-step.left .hiw-step-card,
+    .hiw-step.right .hiw-step-card {
+        grid-column: 1;
+        justify-self: start;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .hiw-step-node {
+        left: 28px;
+        width: 48px;
+        height: 48px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hiw-step-card,
+    .hiw-step-node,
+    .hiw-line-fill {
+        transition: none;
+    }
+}

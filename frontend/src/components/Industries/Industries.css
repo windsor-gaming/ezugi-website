@@ -1,0 +1,307 @@
+.industries {
+    width: 100%;
+    padding: clamp(64px, 8vw, 100px) clamp(24px, 6vw, 80px);
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.industries-header {
+    max-width: 640px;
+    margin: 0 auto 64px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.industries-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.industries-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.industries-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.industries-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1460px;
+    margin: 0 auto;
+}
+
+.industry-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.industry-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.industry-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.industry-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(225, 29, 46, 0.12);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.industry-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.industry-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.industry-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 1150px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .industries-header {
+        margin-bottom: 48px;
+    }
+
+    .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .industry-card {
+        padding: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .industries-header,
+    .industry-card {
+        transition: none;
+    }
+}
+.industries {
+    width: 100%;
+    padding: clamp(64px, 8vw, 100px) clamp(24px, 6vw, 80px);
+    background: var(--bg);
+    transition: background 0.25s ease;
+}
+
+.industries-header {
+    max-width: 640px;
+    margin: 0 auto 64px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.industries-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.industries-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.industries-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.industries-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1460px;
+    margin: 0 auto;
+}
+
+.industry-tile {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    cursor: default;
+}
+
+.industry-tile.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.industry-tile-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.industry-tile:hover .industry-tile-image {
+    transform: scale(1.08);
+}
+
+.industry-tile-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.35) 55%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    transition: background 0.35s ease;
+}
+
+.industry-tile:hover .industry-tile-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(0, 0, 0, 0.92) 100%
+    );
+}
+
+.industry-tile-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px;
+    color: #ffffff;
+}
+
+.industry-tile-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.industry-tile-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.industry-tile:hover .industry-tile-description {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+@media (max-width: 1150px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .industries-header {
+        margin-bottom: 48px;
+    }
+
+    .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .industry-tile {
+        aspect-ratio: 16 / 10;
+    }
+
+    /* Descriptions stay visible by default on touch devices, since hover isn't reliable */
+    .industry-tile-description {
+        max-height: 100px;
+        opacity: 1;
+        margin-top: 4px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .industries-header,
+    .industry-tile,
+    .industry-tile-image,
+    .industry-tile-overlay,
+    .industry-tile-description {
+        transition: none;
+    }
+}
