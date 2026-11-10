@@ -1,0 +1,481 @@
+.our-people {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: clamp(48px, 7vw, 96px) clamp(24px, 6vw, 80px);
+    background: var(--bg);
+    transition: background 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* ---------- Shared reveal (matches WhoWeAre) ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.op-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+}
+
+.op-accent {
+    color: var(--accent);
+}
+
+/* ---------- Intro ---------- */
+.op-intro {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.op-intro h2 {
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text);
+    margin: 0;
+}
+
+.op-intro-copy {
+    border-left: 2px solid var(--accent);
+    padding-left: clamp(16px, 2vw, 24px);
+}
+
+.op-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.op-lead--strong {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+/* ---------- Teams: expanding panels ---------- */
+.op-teams {
+    display: flex;
+    gap: clamp(10px, 1.2vw, 16px);
+    height: clamp(420px, 42vw, 560px);
+    transition-delay: 0.1s;
+}
+
+.op-team {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    background: #111;
+    color: #fff;
+    text-align: left;
+    font: inherit;
+    transition: flex 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+
+.op-team.is-active {
+    flex: 3.2;
+    border-color: var(--accent);
+}
+
+.op-team:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.op-team img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.85) brightness(0.7);
+    transform: scale(1.08);
+    transition: filter 0.6s ease, transform 0.8s ease;
+}
+
+.op-team.is-active img {
+    filter: grayscale(0) brightness(0.9);
+    transform: scale(1);
+}
+
+.op-team-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+.op-team-num {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    transition: background 0.3s ease;
+}
+
+.op-team.is-active .op-team-num {
+    background: var(--accent);
+}
+
+.op-team-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: clamp(18px, 2.2vw, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Collapsed: vertical title */
+.op-team-title {
+    font-size: clamp(1.15rem, 1.8vw, 1.9rem);
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: font-size 0.4s ease;
+}
+
+.op-team.is-active .op-team-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+}
+
+.op-team-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.5s ease;
+}
+
+.op-team.is-active .op-team-roles {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.op-chip {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+}
+
+/* ---------- Statement ---------- */
+.op-statement {
+    margin: clamp(40px, 5vw, 64px) auto clamp(56px, 7vw, 96px);
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--text);
+    transition-delay: 0.25s;
+}
+
+.op-statement em {
+    font-style: normal;
+    color: var(--accent);
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    padding-bottom: 2px;
+}
+
+/* ---------- People groups ---------- */
+.op-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 4vw, 48px);
+    padding-top: clamp(32px, 4vw, 48px);
+    border-top: 1px solid var(--border);
+}
+
+.op-group + .op-group {
+    margin-top: clamp(48px, 6vw, 80px);
+}
+
+.our-people .op-group-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.our-people .op-group-head .op-eyebrow,
+.our-people .op-group-head h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.op-group-head h3 {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text);
+    margin: 0;
+}
+
+.op-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(14px, 2vw, 24px);
+}
+
+/* ---------- Person card ---------- */
+.op-person {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: calc(var(--i) * 0.12s + 0.15s);
+}
+
+.op-group.in-view .op-person {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.op-person-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+}
+
+.op-person--corp .op-person-photo {
+    aspect-ratio: 1 / 1;
+}
+
+.op-person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1);
+    transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.op-person:hover .op-person-photo img {
+    filter: grayscale(0);
+    transform: scale(1.04);
+}
+
+/* Accent bar sweeps up on hover */
+.op-person-photo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+}
+
+.op-person:hover .op-person-photo::after {
+    transform: scaleX(1);
+}
+
+.op-person-placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(225, 29, 46, 0.28), transparent 60%),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 14px,
+            var(--input-bg) 14px 15px
+        );
+}
+
+.op-person-placeholder span {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text);
+    opacity: 0.85;
+    letter-spacing: 0.04em;
+}
+
+.op-person-index {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.op-person-meta {
+    padding: 16px 4px 0;
+}
+
+.op-person-meta h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 4px;
+}
+
+.op-person-meta p {
+    font-size: 0.92rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0;
+}
+
+.intro-highlight {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1150px) {
+    .op-group {
+        grid-template-columns: 1fr;
+    }
+
+    .op-group-head {
+        position: static;
+    }
+}
+
+@media (max-width: 860px) {
+    .op-intro {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    /* Panels stack vertically; active one grows taller */
+    .op-teams {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .op-team {
+        flex: none;
+        height: 110px;
+        transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+    }
+
+    .op-team.is-active {
+        flex: none;
+        height: 340px;
+    }
+
+    .op-team-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        white-space: normal;
+    }
+
+    .op-team-num {
+        top: 14px;
+        left: auto;
+        right: 16px;
+    }
+
+    .op-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .op-team.is-active {
+        height: 380px;
+    }
+
+    .op-chip {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .op-grid--lead {
+        grid-template-columns: 1fr;
+    }
+
+    .op-grid--corp {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .op-person--corp .op-person-meta h4 {
+        font-size: 0.95rem;
+    }
+
+    .op-person--corp .op-person-meta p {
+        font-size: 0.8rem;
+    }
+
+    .op-person--lead .op-person-photo {
+        aspect-ratio: 4 / 4.2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .op-person,
+    .op-team,
+    .op-team img,
+    .op-team-roles,
+    .op-person-photo img,
+    .op-person-photo::after {
+        transition: none;
+    }
+}

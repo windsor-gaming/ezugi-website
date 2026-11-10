@@ -1,6 +1,5 @@
 .features {
     width: 100%;
-    min-height: 100vh;
     padding: 96px 80px;
     background: var(--bg);
     transition: background 0.25s ease;
